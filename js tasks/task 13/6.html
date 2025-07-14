@@ -1,0 +1,22 @@
+<html>
+<head>
+  <title>Display Array Elements</title>
+</head>
+<body>
+  <h3>First 3 Elements:</h3>
+  <ul id="output"></ul>
+
+  <script>
+    let fruits = ["Apple", "Banana", "Cherry", "Mango", "Orange"];
+    let firstThree = fruits.slice(0, 3);
+
+    let list = document.getElementById("output");
+
+    firstThree.forEach(function(item) {
+      let li = document.createElement("li");
+      li.textContent = item;
+      list.appendChild(li);
+    });
+  </script>
+</body>
+</html>
