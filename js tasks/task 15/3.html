@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Complex Interest Calculator</title>
+</head>
+<body>
+
+  <h2>Complex Interest Calculator</h2>
+
+  <label>Principal (P):</label>
+  <input type="number" id="principal"><br><br>
+
+  <label>Rate (R):</label>
+  <input type="number" id="rate"><br><br>
+
+  <label>Time (T):</label>
+  <input type="number" id="time"><br><br>
+
+  <button onclick="calculateInterest()">Calculate</button>
+
+  <h3 id="result"></h3>
+
+  <script>
+    function calculateInterest() {
+      let P = parseFloat(document.getElementById("principal").value);
+      let R = parseFloat(document.getElementById("rate").value);
+      let T = parseFloat(document.getElementById("time").value);
+
+      if (isNaN(P) || isNaN(R) || isNaN(T) || R === 0) {
+        document.getElementById("result").innerText = "Please enter valid values (Rate must not be 0)";
+        return;
+      }
+
+      let interest = ((P / R) * T) / 100;
+
+      document.getElementById("result").innerText = "Complex Interest: " + interest.toFixed(2);
+    }
+  </script>
+
+</body>
+</html>
