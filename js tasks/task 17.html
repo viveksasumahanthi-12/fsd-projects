@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>3 Cards in a Row</title>
+  <style>
+    .card-container {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Cards Created with JavaScript</h2>
+  <div class="card-container" id="cardContainer"></div>
+
+  <script>
+    const cardsData = [
+      { title: "Card 1", content: "This is the first card." },
+      { title: "Card 2", content: "This is the second card." },
+      { title: "Card 3", content: "This is the third card." }
+    ];
+
+    const container = document.getElementById("cardContainer");
+
+    cardsData.forEach(card => {
+      const div = document.createElement("div");
+      div.className = "card";
+      div.innerHTML = `<h3>${card.title}</h3><p>${card.content}</p>`;
+      container.appendChild(div);
+    });
+  </script>
+
+</body>
+</html>
