@@ -1,0 +1,23 @@
+let stateValues = [];
+let stateNumber = 100;
+stateValues.push({ type: "Number", value: stateNumber });
+let stateString = "Hello World";
+stateValues.push({ type: "String", value: stateString });
+let stateBoolean = true;
+stateValues.push({ type: "Boolean", value: stateBoolean });
+let stateUndefined;
+stateValues.push({ type: "Undefined", value: stateUndefined });
+let stateNull = null;
+stateValues.push({ type: "Null", value: stateNull });
+let stateObject = { name: "Alice", age: 25 };
+stateValues.push({ type: "Object", value: JSON.stringify(stateObject) });
+let stateArray = [1, 2, 3, "hello"];
+stateValues.push({ type: "Array", value: JSON.stringify(stateArray) });
+let stateSymbol = Symbol("id");
+stateValues.push({ type: "Symbol", value: stateSymbol.toString() });
+const container = document.getElementById("state-values");
+stateValues.forEach(item => {
+  const p = document.createElement("p");
+  p.textContent = `${item.type}: ${item.value}`;
+  container.appendChild(p);
+});
