@@ -6,12 +6,10 @@ function App() {
   const [products, setProducts] = useState([
     { name: "Laptop", price: 50000, category: "Electronics", stock: 10 },
   ]);
-
-  // Update existing product
+  
   const [updateIndex, setUpdateIndex] = useState(null);
   const [updateData, setUpdateData] = useState({});
 
-  // Add new product form data
   const [newProduct, setNewProduct] = useState({
     name: "",
     price: "",
@@ -19,13 +17,11 @@ function App() {
     stock: "",
   });
 
-  // Toggle update form
   const handleUpdateClick = (index) => {
     setUpdateIndex(index);
     setUpdateData({ ...products[index] });
   };
 
-  // Update product in list
   const handleUpdateSubmit = (e) => {
     e.preventDefault();
     const updatedProducts = [...products];
@@ -38,19 +34,16 @@ function App() {
     setUpdateIndex(null);
   };
 
-  // Handle input change for update form
   const handleUpdateChange = (e) => {
     const { name, value } = e.target;
     setUpdateData({ ...updateData, [name]: value });
   };
 
-  // Handle input change for new product form
   const handleNewChange = (e) => {
     const { name, value } = e.target;
     setNewProduct({ ...newProduct, [name]: value });
   };
 
-  // Add new product to list
   const handleNewSubmit = (e) => {
     e.preventDefault();
     setProducts([
@@ -159,3 +152,4 @@ function App() {
 }
 
 export default App;
+
