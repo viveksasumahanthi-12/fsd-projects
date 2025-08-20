@@ -1,0 +1,43 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.card {
+  background: #fafafa;
+  padding: 20px;
+  border-left: 5px solid #28a745;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #007bff;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background: #007bff;
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+}
