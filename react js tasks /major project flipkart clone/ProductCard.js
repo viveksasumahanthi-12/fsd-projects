@@ -1,5 +1,5 @@
 import React from "react";
-import "./../productcard.css";
+import "productcard.css";
 
 const ProductCard = ({ product, addToCart }) => {
   if (!product) return null;
@@ -41,3 +41,4 @@ const ProductCard = ({ product, addToCart }) => {
 };
 
 export default ProductCard;
+
