@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "../auth.css";
+import "auth.css";
 
 const Login = ({ setUser }) => {
   const [phone, setPhone] = useState("");
@@ -12,7 +12,7 @@ const Login = ({ setUser }) => {
   useEffect(() => {
     const existingUser = JSON.parse(localStorage.getItem("currentUser"));
     if (existingUser) {
-      navigate("/");
+      navigate("");
     }
   }, [navigate]);
 
@@ -68,3 +68,4 @@ const Login = ({ setUser }) => {
 };
 
 export default Login;
+
