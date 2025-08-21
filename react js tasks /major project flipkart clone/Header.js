@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
-import "../header.css";
+import "header.css";
 
 const Header = ({ cartCount, currentUser, setCurrentUser }) => {
   const navigate = useNavigate();
@@ -11,7 +11,7 @@ const Header = ({ cartCount, currentUser, setCurrentUser }) => {
     if (confirmLogout) {
       localStorage.removeItem("loggedInUser");
       setCurrentUser(null);
-      navigate("/auth"); // redirect to login/register page
+      navigate("auth");
     }
   };
 
@@ -19,14 +19,14 @@ const Header = ({ cartCount, currentUser, setCurrentUser }) => {
     <header className="header">
       {/* Left: Logo */}
       <div className="logo">
-        <Link to="/">Vivek Flipkart Clone</Link>
+        <Link to="">Vivek Flipkart Clone</Link>
       </div>
 
       {/* Center: Nav Links */}
       <nav className="nav-links">
-        <Link to="/" className="nav-item">Home</Link>
-        <Link to="/todos" className="nav-item">Todos</Link>
-        <Link to="/testing" className="nav-item">Testing</Link>
+        <Link to="" className="nav-item">Home</Link>
+        <Link to="todos" className="nav-item">Todos</Link>
+        <Link to="testing" className="nav-item">Testing</Link>
       </nav>
 
       {/* Right: Search + User + Cart */}
@@ -46,8 +46,8 @@ const Header = ({ cartCount, currentUser, setCurrentUser }) => {
           </div>
         ) : (
           <div className="auth-links">
-            <Link to="/auth" className="nav-item">Login</Link>
-            <Link to="/auth" className="nav-item">Register</Link>
+            <Link to="auth" className="nav-item">Login</Link>
+            <Link to="auth" className="nav-item">Register</Link>
           </div>
         )}
 
@@ -62,3 +62,4 @@ const Header = ({ cartCount, currentUser, setCurrentUser }) => {
 };
 
 export default Header;
+
