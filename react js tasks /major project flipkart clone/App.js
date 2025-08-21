@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import Products from "./components/Products";
-import Cart from "./components/Cart";
-import Todos from "./components/Todos";
-import AuthPage from "./components/AuthPage";
-import "./App.css";
+import Header from "Header";
+import Products from "Products";
+import Cart from "Cart";
+import Todos from "Todos";
+import AuthPage from "AuthPage";
+import "App.css";
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -21,7 +21,7 @@ const App = () => {
 
   const addToCart = (product) => {
     setCart([...cart, product]);
-    localStorage.setItem("cart", JSON.stringify([...cart, product]));
+    localStorage.setItem("cart", JSON.stringify([cart, product]));
   };
 
   const removeFromCart = (id) => {
@@ -40,14 +40,15 @@ const App = () => {
     <div>
       <Header cartCount={cart.length} currentUser={currentUser} setCurrentUser={setCurrentUser} />
       <Routes>
-        <Route path="/" element={<Products addToCart={addToCart} />} />
-        <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} />} />
-        <Route path="/todos" element={<Todos />} />
-        <Route path="/auth" element={<AuthPage setCurrentUser={setCurrentUser} />} />
-        <Route path="/testing" element={<h2 style={{ textAlign: "center" }}>🔧 Testing Page</h2>} />
+        <Route path="" element={<Products addToCart={addToCart} />} />
+        <Route path="cart" element={<Cart cart={cart} removeFromCart={removeFromCart} />} />
+        <Route path="todos" element={<Todos />} />
+        <Route path="auth" element={<AuthPage setCurrentUser={setCurrentUser} />} />
+        <Route path="testing" element={<h2 style={{ textAlign: "center" }}>🔧 Testing Page</h2>} />
       </Routes>
     </div>
   );
 };
 
 export default App;
+
