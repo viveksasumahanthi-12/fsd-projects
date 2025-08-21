@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "../auth.css";
+import "auth.css";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -14,7 +14,7 @@ const Register = () => {
   useEffect(() => {
     const existingUser = JSON.parse(localStorage.getItem("currentUser"));
     if (existingUser) {
-      navigate("/");
+      navigate("");
     }
   }, [navigate]);
 
@@ -43,7 +43,7 @@ const Register = () => {
     localStorage.setItem("users", JSON.stringify(users));
 
     toast.success("🎉 Registration successful! Please login.");
-    navigate("/login");
+    navigate("login");
   };
 
   return (
@@ -91,3 +91,4 @@ const Register = () => {
 };
 
 export default Register;
+
