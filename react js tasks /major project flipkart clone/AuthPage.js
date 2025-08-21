@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../auth.css';
+import 'auth.css';
 
 export default function AuthPage() {
   const [number, setNumber] = useState("");
@@ -36,3 +36,4 @@ export default function AuthPage() {
     </div>
   );
 }
+
