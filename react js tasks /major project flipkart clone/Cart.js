@@ -1,5 +1,5 @@
 import React from "react";
-import "../cart.css"; // ✅ fixed path
+import "cart.css";
 
 const Cart = ({ cart, removeFromCart }) => {
   // ✅ Calculate total price
@@ -44,3 +44,4 @@ const Cart = ({ cart, removeFromCart }) => {
 };
 
 export default Cart;
+
