@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import "../todos.css";
+import "todos.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// ✅ Initialize Toast
 import { ToastContainer } from "react-toastify";
 
 const Todos = () => {
@@ -11,7 +10,6 @@ const Todos = () => {
   const [task, setTask] = useState("");
   const [editId, setEditId] = useState(null);
 
-  // ✅ Load saved todos from localStorage
   useEffect(() => {
     const savedTodos = JSON.parse(localStorage.getItem("todos"));
     if (savedTodos) {
@@ -19,12 +17,10 @@ const Todos = () => {
     }
   }, []);
 
-  // ✅ Save todos to localStorage
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
-  // ✅ Add or Update task
   const handleAddOrUpdate = () => {
     if (task.trim() === "") return;
 
@@ -45,14 +41,12 @@ const Todos = () => {
     setTask("");
   };
 
-  // ✅ Handle Enter key
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       handleAddOrUpdate();
     }
   };
 
-  // ✅ Delete task
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this task?")) {
       setTodos(todos.filter((todo) => todo.id !== id));
@@ -60,14 +54,12 @@ const Todos = () => {
     }
   };
 
-  // ✅ Start editing
   const handleEdit = (id) => {
     const todoToEdit = todos.find((todo) => todo.id === id);
     setTask(todoToEdit.text);
     setEditId(id);
   };
 
-  // ✅ Toggle completed
   const toggleTodo = (id) => {
     setTodos(
       todos.map((todo) =>
@@ -76,7 +68,6 @@ const Todos = () => {
     );
   };
 
-  // ✅ Clear all tasks
   const handleClearAll = () => {
     if (window.confirm("Are you sure you want to clear all tasks?")) {
       setTodos([]);
@@ -141,3 +132,4 @@ const Todos = () => {
 };
 
 export default Todos;
+
