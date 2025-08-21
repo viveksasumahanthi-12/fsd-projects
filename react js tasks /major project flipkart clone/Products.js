@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo } from "react";
-import "./../productcard.css"; // keep as you already have
+import "productcard.css";
 
 const Products = ({ addToCart }) => {
   const [products, setProducts] = useState([]);
@@ -101,3 +101,4 @@ const Products = ({ addToCart }) => {
 };
 
 export default Products;
+
